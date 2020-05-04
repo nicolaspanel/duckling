@@ -39,7 +39,6 @@ allExamples = concat
   , examples (simple USD 1.23)
              [ "USD1,23"
              , "1 USD et 23 centimes"
-             , "1 USD 23 cents"
              ]
   , examples (simple EUR 20)
              [ "20€"

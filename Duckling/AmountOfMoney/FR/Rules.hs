@@ -72,7 +72,7 @@ ruleCent :: Rule
 ruleCent = Rule
   { name = "cent"
   , pattern =
-    [ regex "cent(ime)?s?"
+    [ regex "centimes?"
     ]
   , prod = \_ -> Just . Token AmountOfMoney $ currencyOnly Cent
   }
