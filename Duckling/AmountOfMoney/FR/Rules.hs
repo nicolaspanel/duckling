@@ -28,14 +28,14 @@ import qualified Duckling.Numeral.Types as TNumeral
 
 ruleUnitAmount :: Rule
 ruleUnitAmount = Rule
-  { name = "<unit> <amount>"
+  { name = "<amount> <unit>"
   , pattern =
-    [ Predicate isCurrencyOnly
-    , Predicate isPositive
+    [ Predicate isPositive
+    , Predicate isCurrencyOnly
     ]
   , prod = \case
-      (Token AmountOfMoney AmountOfMoneyData{TAmountOfMoney.currency = c}:
-       Token Numeral NumeralData{TNumeral.value = v}:
+      (Token Numeral NumeralData{TNumeral.value = v}:
+       Token AmountOfMoney AmountOfMoneyData{TAmountOfMoney.currency = c}:
        _) -> Just . Token AmountOfMoney . withValue v $ currencyOnly c
       _ -> Nothing
   }
