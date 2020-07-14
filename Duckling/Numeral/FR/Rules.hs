@@ -196,23 +196,23 @@ ruleNumerals3 = Rule
       _ -> Nothing
   }
 
-ruleNumeralsSuffixesKMG :: Rule
-ruleNumeralsSuffixesKMG = Rule
-  { name = "numbers suffixes (K, M, G)"
-  , pattern =
-    [ dimension Numeral
-    , regex "([kmg])(?=[\\W$€¢£]|$)"
-    ]
-  , prod = \tokens -> case tokens of
-      (Token Numeral NumeralData{TNumeral.value = v}:
-       Token RegexMatch (GroupMatch (match:_)):
-       _) -> case Text.toLower match of
-         "k" -> double $ v * 1e3
-         "m" -> double $ v * 1e6
-         "g" -> double $ v * 1e9
-         _   -> Nothing
-      _ -> Nothing
-  }
+-- ruleNumeralsSuffixesKMG :: Rule
+-- ruleNumeralsSuffixesKMG = Rule
+--   { name = "numbers suffixes (K, M, G)"
+--   , pattern =
+--     [ dimension Numeral
+--     , regex "([kmg])(?=[\\W$€¢£]|$)"
+--     ]
+--   , prod = \tokens -> case tokens of
+--       (Token Numeral NumeralData{TNumeral.value = v}:
+--        Token RegexMatch (GroupMatch (match:_)):
+--        _) -> case Text.toLower match of
+--          "k" -> double $ v * 1e3
+--          "m" -> double $ v * 1e6
+--          "g" -> double $ v * 1e9
+--          _   -> Nothing
+--       _ -> Nothing
+--   }
 
 ruleNumeral4 :: Rule
 ruleNumeral4 = Rule
@@ -312,7 +312,7 @@ rules =
   , ruleNumerals4
   , ruleNumerals5
   , ruleNumeralsPrefixWithNegativeOrMinus
-  , ruleNumeralsSuffixesKMG
+--  , ruleNumeralsSuffixesKMG
   , rulePowersOfTen
   , ruleSum
   , ruleMultiply
