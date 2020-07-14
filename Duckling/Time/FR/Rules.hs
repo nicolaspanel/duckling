@@ -1898,29 +1898,29 @@ ruleTimezone = Rule
 
 ruleMonths :: [Rule]
 ruleMonths = mkRuleMonths
-  [ ( "Janvier"   , "janvier|janv\\.?"                    )
-  , ( "Fevrier"   , "f(é|e)vrier|f(é|e)v\\.?"   )
-  , ( "Mars"      , "mars|mar\\.?"                        )
-  , ( "Avril"     , "avril|avr\\.?"                       )
-  , ( "Mai"       , "mai"                                 )
-  , ( "Juin"      , "juin|jun\\.?"                        )
-  , ( "Juillet"   , "juillet|juil?\\."                    )
-  , ( "Aout"      , "ao(û|u)t|aou\\.?"               )
-  , ( "Septembre" , "septembre|sept?\\.?"                 )
-  , ( "Octobre"   , "octobre|oct\\.?"                     )
-  , ( "Novembre"  , "novembre|nov\\.?"                    )
-  , ( "Decembre"  ,  "d(é|e)cembre|d(é|e)c\\.?" )
+  [ ( "Janvier"   , "janvier"       )
+  , ( "Fevrier"   , "f(é|e)vrier"   )
+  , ( "Mars"      , "mars"          )
+  , ( "Avril"     , "avril"         )
+  , ( "Mai"       , "mai"           )
+  , ( "Juin"      , "juin"          )
+  , ( "Juillet"   , "juillet"       )
+  , ( "Aout"      , "ao(û|u)t"      )
+  , ( "Septembre" , "septembre"     )
+  , ( "Octobre"   , "octobre"       )
+  , ( "Novembre"  , "novembre"      )
+  , ( "Decembre"  ,  "d(é|e)cembre" )
   ]
 
 ruleDaysOfWeek :: [Rule]
 ruleDaysOfWeek = mkRuleDaysOfWeek
-  [ ( "Lundi"    , "lun\\.?(di)?"    )
-  , ( "Mardi"    , "mar\\.?(di)?"    )
-  , ( "Mercredi" , "mer\\.?(credi)?" )
-  , ( "Jeudi"    , "jeu\\.?(di)?"    )
-  , ( "Vendredi" , "ven\\.?(dredi)?" )
-  , ( "Samedi"   , "sam\\.?(edi)?"   )
-  , ( "Dimanche" , "dim\\.?(anche)?" )
+  [ ( "Lundi"    , "lundi"    )
+  , ( "Mardi"    , "mardi"    )
+  , ( "Mercredi" , "mercredi" )
+  , ( "Jeudi"    , "jeudi"    )
+  , ( "Vendredi" , "vendredi" )
+  , ( "Samedi"   , "samedi"   )
+  , ( "Dimanche" , "dimanche" )
   ]
 
 rules :: [Rule]
