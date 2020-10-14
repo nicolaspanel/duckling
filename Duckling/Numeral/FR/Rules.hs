@@ -257,11 +257,12 @@ rulePowersOfTen :: Rule
 rulePowersOfTen = Rule
   { name = "powers of tens"
   , pattern =
-    [ regex "(cent|mille|millions?|milliards?)"
+    [ regex "(cents?|mille|millions?|milliards?)"
     ]
   , prod = \tokens -> case tokens of
       (Token RegexMatch (GroupMatch (match:_)):_) -> case Text.toLower match of
         "cent"      -> double 1e2 >>= withGrain 2 >>= withMultipliable
+        "cents"      -> double 1e2 >>= withGrain 2 >>= withMultipliable
         "mille"     -> double 1e3 >>= withGrain 3 >>= withMultipliable
         "million"   -> double 1e6 >>= withGrain 6 >>= withMultipliable
         "millions"  -> double 1e6 >>= withGrain 6 >>= withMultipliable
